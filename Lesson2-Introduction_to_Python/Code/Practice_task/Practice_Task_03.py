@@ -29,17 +29,17 @@ users_second_name = input('Укажите Вашу фамилию:\n>>> ')
 users_age = int(input('Укажите Ваш возраст:\n>>> '))
 users_weight = int(input('Укажите Ваш вес:\n>>> '))
 
-if users_age < 30 and 50 <= users_weight <= 120:
+if users_age <= 30 and 50 <= users_weight <= 120:
     medical_data = 'пациент в хорошем состоянии'
+elif 30 < users_age <= 40 and (users_weight < 50 or 120 < users_weight):
+    medical_data = 'пациенту требуется заняться собой'
 elif 40 < users_age and (users_weight < 50 or 120 < users_weight):
     medical_data = 'пациенту требуется врачебный осмотр'
-elif 30 < users_age and (users_weight < 50 or 120 < users_weight):
-    medical_data = 'пациенту требуется заняться собой'
 else:
     medical_data = 'нет информации для пациента'
 
 print(f'Пациент: {users_first_name} {users_second_name}.\n'
-      + 'Медецинские данные:\n'
-      + f'- Возраст, лет – {users_age};\n'
-      + f'- Вес, кг – {users_weight}.\n'
-      + f'Медецинские рекомендации: {medical_data}')
+      f'Медецинские данные:\n'
+      f'- Возраст, лет – {users_age};\n'
+      f'- Вес, кг – {users_weight}.\n'
+      f'Медецинские рекомендации: {medical_data}')
