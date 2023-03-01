@@ -8,5 +8,20 @@
 first_list = [2, 5, 8, 2, 12, 12, 4]
 second_list = [2, 7, 12, 3]
 
-result = list(set(first_list) - set(second_list))
-print(result)
+result = list(set(first_list.copy()) - set(second_list.copy()))
+print('Вариант с исплзованием set:\n'
+      f'{first_list} - {second_list} = {result}\n'
+      'Проблема: если в исходных списках были элементы с одинаковымм значениями,\n'
+      'то они будут потеряны в результате приведения к типу set, что делает решение не верным ;(')
+print()
+
+first_list = [2, 5, 8, 2, 12, 12, 4]
+second_list = [2, 7, 12, 3]
+
+# Для удаления элементов из итерируемого списка используется срез (копия) списка
+for number in first_list[:]:
+    if number in second_list:
+        first_list.remove(number)
+
+print('Вариант с исплзованием for...in и list.remove():\n'
+      f'[2, 5, 8, 2, 12, 12, 4] - [2, 7, 12, 3] = {first_list}\n')

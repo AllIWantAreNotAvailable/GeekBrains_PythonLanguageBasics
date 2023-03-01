@@ -27,6 +27,6 @@ months = {
 }
 
 users_date = input('Введите дату в формате ХХ.ХХ.ХХХХ:\n>>> ')
-date_parts = users_date.split('.')
+day, month, year = users_date.split('.')
 
-print(f'{days[date_parts[0]]} {months[date_parts[1]]} {date_parts[2]} года')
+print(f'{days[day]} {months[month]} {year} года')

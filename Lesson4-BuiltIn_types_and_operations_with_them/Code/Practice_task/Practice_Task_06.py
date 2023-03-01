@@ -17,3 +17,12 @@ for i in range(len(numbers_list)):
         uniq_numbers.append(number)
 
 print(f'{numbers_list} --> {uniq_numbers}')
+
+# Альтернатива методом list.count()
+uniq_numbers.clear()
+
+for number in numbers_list:
+    if numbers_list.count(number) == 1:
+        uniq_numbers.append(number)
+
+print(f'{numbers_list} --> {uniq_numbers}')
