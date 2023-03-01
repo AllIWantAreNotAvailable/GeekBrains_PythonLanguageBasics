@@ -16,10 +16,10 @@ import random
 
 lower_bound = int(input('Укажите минимальную границу диапазона угадывания числа:\n>>>'))
 upper_bound = int(input('Укажите максимальную границу диапазона угадывания числа:\n>>>'))
-is_winner = False
+users_check = None
 guess = random.randint(lower_bound, upper_bound)
 count = 0
-while not is_winner:
+while users_check != '=':
     users_check = input(f'\nРобот: "Я думаю, Вы загадали число {guess}, верно?"\n'
                         '(\n - "=" – угадал!\n'
                         '- ">" - моё число больше!\n'
@@ -30,11 +30,9 @@ while not is_winner:
     elif users_check == '<':
         upper_bound = guess
         guess = random.randint(lower_bound, upper_bound)
-    elif users_check == '=':
-        is_winner = True
     else:
         continue
     count += 1
 else:
-    print('Роботы победили роботов!\n'
+    print('Роботы победили!\n'
           f'Секретное число угаданно за {count} попыток! >.<')
