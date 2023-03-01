@@ -5,3 +5,8 @@
 # my_list_1 = [2, 5, 8, 2, 12, 12, 4]
 # my_list_2 = [2, 7, 12, 3]
 
+first_list = [2, 5, 8, 2, 12, 12, 4]
+second_list = [2, 7, 12, 3]
+
+result = list(set(first_list) - set(second_list))
+print(result)
