@@ -35,8 +35,8 @@ def fight(*args) -> dict:
             victim = args[0]
 
         damage = round(damage_calculation(attacker["damage"], victim["armor"]))
-        is_сritical_damage = True if 70 < random.randint(0, 100) else False
-        damage += round(damage // 2 if is_сritical_damage else 0)
+        is_critical_damage = True if 70 < random.randint(0, 100) else False
+        damage += round(damage // 2 if is_critical_damage else 0)
 
         victim["health"] = take_damage(damage=damage,
                                        health=victim["health"])
