@@ -11,7 +11,7 @@ import time
 
 def make_dirs_list():
     dirs_paths = []
-    for i in range(1, 9):
+    for i in range(1, 10):  # [1 -> 10) -> [1,2 ... 9]
         dirs_paths.append(os.path.join(os.getcwd(), f'dir_{i}'))
     print(dirs_paths)
     return dirs_paths
