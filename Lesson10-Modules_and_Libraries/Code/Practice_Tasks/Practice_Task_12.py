@@ -12,7 +12,7 @@ def get_rand_list_elem(elements: list = []):
     :param elements: Список элементов.
     :return: Возвращает случайный элемент из elements, если список пустой None.
     """
-    return random.choice(elements) if 0 < len(elements) else None
+    return random.choice(elements) if elements else None
 
 
 def main():
