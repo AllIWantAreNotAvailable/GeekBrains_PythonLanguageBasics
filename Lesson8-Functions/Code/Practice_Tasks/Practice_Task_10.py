@@ -40,7 +40,7 @@ def fight(*args) -> dict:
 
         victim["health"] = take_damage(damage=damage,
                                        health=victim["health"])
-        print(f'Игрок {victim["name"]} получил(а) {damage} {"критического " if is_сritical_damage else ""}урона,')
+        print(f'Игрок {victim["name"]} получил(а) {damage} {"критического " if is_critical_damage else ""}урона,')
         if victim["health"] < 1:
             print(f'этот удар был смертельным для {victim["name"]}...\n')
             return attacker
