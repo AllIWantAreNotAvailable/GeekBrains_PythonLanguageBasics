@@ -4,3 +4,36 @@
 # «Василий, 21 год(а), проживает в городе Москва»
 
 
+def show_result(user_data: dict) -> None:
+    """
+    Функция выводит в консоль данные пользователя.
+    :param user_data: {"name": str, "age": int, "city": str}
+    :return: None
+    """
+    print(f'{user_data["name"]}, {user_data["age"]} год(а), проживает в городе {user_data["city"]}')
+
+
+def user_input() -> dict:
+    """
+    Функция считывает данные, которые вводит пользователь,
+    :return: {"name": str, "age": int, "city": str}
+    """
+    return {"name": input('Введите Ваше имя:\n>>> '),
+            "age": int(input('Введите Ваш возраст:\n>>> ')),
+            "city": input('Введите Ваш город проживания:\n>>> ')}
+
+
+def main() -> None:
+    """
+    Программа запрашивает у пользователя:\n
+    - имя;\n
+    - возраст;\n
+    - город проживания.\n
+    После чего, выводит данные пользователя в консоль.
+    :return: None
+    """
+    show_result(user_input())
+
+
+if __name__ == '__main__':
+    main()
